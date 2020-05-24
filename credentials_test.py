@@ -81,6 +81,5 @@ class CredentialsTest(unittest.TestCase):
         self.assertEqual(Credentials.display_credentials(),Credentials.credentials_list)
         
 
-
 if __name__ == '__main__':
     unittest.main()
