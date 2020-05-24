@@ -21,7 +21,7 @@ class User:
 
     def delete_account(self):
         '''
-        delete_account method deletes a saved contact from the login_details
+        delete_account method deletes a saved account details from the login_details
         '''
 
         User.login_details.remove(self)

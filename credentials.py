@@ -7,9 +7,49 @@ class Credentials(User):
 
     credentials_list = []
 
-    def __init__(self,first_name,last_name,email,password):
+    def __init__(self,account_name,username,email,password):
 
-        self.first_name = first_name
-        self.last_name = last_name
+        self.account_name = account_name
+        self.username = username
         self.email = email
         self.password = password
+
+    def save_credentials(self):
+        '''
+        save_credentials method saves credentials to the credentials_list
+        '''
+
+        Credentials.credentials_list.append(self)
+
+    def delete_credentials(self):
+        '''
+        delete_credentials method deletes saved credentials from the credentials_list
+        '''
+
+        Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def find_by_name(cls,name):
+        '''
+        Method that takes in an account_name and returns credentials that matches that account_name.
+        Args:
+        account_name: account_name to search for
+        Returns :
+        Credentials of account that matches the account_name.
+        '''
+
+        for credentials in cls.credentials_list:
+            if credentials.account_name == name :
+                return credentials
+
+    @classmethod
+    def display_credentials(cls):
+        '''
+        method that returns the credentials list
+        '''
+
+        return cls.credentials_list
+
+    
+
+
