@@ -1,4 +1,4 @@
-class Lockpass:
+class :
     '''
     class that generate new instances of credentials
     '''
