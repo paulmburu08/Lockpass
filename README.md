@@ -15,6 +15,12 @@ Users first create an account and login to there account where they can do eithe
 
 # Project Set-up Instructions
 - Open github and clone the repository into your local computer.
+- Open your terminal and navigate to the project directory.
+- Run ./run.py.
+- Follow navigation instructions provided.
+
+# Development and modifications
+- Open github and clone the repository into your local computer.
 - Make any necessary changes/contributions to the project.
 - Git push to github using you local terminal.
 - Create a pull request in order for the changes to be incorporated.
