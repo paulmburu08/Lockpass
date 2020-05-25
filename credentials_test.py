@@ -50,7 +50,7 @@ class CredentialsTest(unittest.TestCase):
 
     def test_credentials_exist(self):
         '''
-        test to check if we can return a Boolean  if we cannot find the contact.
+        test to check if we can return a Boolean if we cannot find the credentials.
         '''
 
         self.new_credentials.save_credentials()
