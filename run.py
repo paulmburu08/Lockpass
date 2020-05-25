@@ -52,13 +52,35 @@ def find_credentials(name):
     '''
     return Credentials.find_by_name(name)
 
-def display_credential()
+def display_credential():
     '''
     Function that returns all the saved account credentials
     '''
     Credentials.display_credentials()
 
+def main():
+    print('Welcome to LOCKPASS. Sign up below to be login into your account')
+    print('\n')
+    
+    print('First name.....')
+    f_name = input()
 
+    print('Last name....')
+    l_name = input()
+
+    print('email')
+    email = input()
+
+    print('password')
+    password = input()
+
+    save_accounts(create_account(f_name,l_name,email,password))
+    print('\n')
+
+    while True:
+        print(f'Hello {f_name}. What would you like to do?')
+        print('\n')
+        print('Use the codes: sc - Save existing account credentials, cc - Create new account credentials')
 
 
 if __name__ == '__main__':
