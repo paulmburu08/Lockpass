@@ -14,16 +14,16 @@ Users first create an account and login to there account where they can do eithe
 - Delete account credentials.
 
 # Project Set-up Instructions
--Open github and clone the repository into your local computer.
--Make any necessary changes/contributions to the project.
--Git push to github using you local terminal.
--Create a pull request in order for the changes to be incorporated.
+- Open github and clone the repository into your local computer.
+- Make any necessary changes/contributions to the project.
+- Git push to github using you local terminal.
+- Create a pull request in order for the changes to be incorporated.
 
 # Technologies Used.
--Pythonv3.6
+- Pythonv3.6
 
 # Support and contact details
--Persons are encouraged to copy,modify,merge and make changes to this software in a case of new ideas or issues.You can reach me at paulmburu08@gmail.com for more communication.
+Persons are encouraged to copy,modify,merge and make changes to this software in a case of new ideas or issues.You can reach me at paulmburu08@gmail.com for more communication.
 
 # License
 MIT License
