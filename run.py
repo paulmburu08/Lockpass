@@ -46,7 +46,7 @@ def credential_exist(name):
     '''
     Function that check if a contact exists with that account name and return a Boolean
     '''
-    return Credentials.credentials_exist(number)
+    return Credentials.credentials_exist(name)
 
 def del_credentials(credentials):
     '''
@@ -64,7 +64,7 @@ def display_credential():
     '''
     Function that returns all the saved account credentials
     '''
-    Credentials.display_credentials()
+    return Credentials.display_credentials()
 
 def main():
     print('Welcome to LOCKPASS. Sign up below to be login into your account')
@@ -76,10 +76,10 @@ def main():
     print('Last name....')
     l_name = input()
 
-    print('email')
+    print('Email')
     email = input()
 
-    print('password')
+    print('Password')
     password = input()
 
     save_accounts(create_account(f_name,l_name,email,password))
@@ -88,7 +88,7 @@ def main():
     while True:
         print(f'Hello {f_name}. What would you like to do?')
         print('\n')
-        print('Use the codes: sc - Save existing account credentials, cc - Create new account credentials, dc - Display accounts credentials, fc - Find an account credentials , dlc - Delete account credentials , ex - Exit)
+        print('Use the codes: sc - Save existing account credentials, cc - Create new account credentials, dc - Display accounts credentials, fc - Find an account credentials , dlc - Delete account credentials , ex - Exit')
 
         code = input().lower()
 
@@ -102,10 +102,10 @@ def main():
             print('username')
             u_name = input()
 
-            print('email')
+            print('Email')
             e_address = input()
 
-            print('password')
+            print('Password')
             pass_word = input()
 
             save_credential(create_credentials(a_name,u_name,e_address,pass_word))
@@ -123,27 +123,29 @@ def main():
             print('username')
             u_name = input()
 
-            print('email')
+            print('Email')
             e_address = input()
 
-            print('password')
+            print('Password')
+            print('-'*20)
             print('Use codes below to choose either to have your password generated for you or create your own password')
             print('gp - Password generated for you , cp - Create your own password')
 
-            password_code = input().lower
-            if password_code == 'gp':
-                a = random.choice(string.ascii_lowercase)
-                b = random.choice(string.ascii_lowercase)
-                c = random.choice(string.ascii_lowercase)
-                d = random.randint(0,9)
-                e = random.randint(0,9)
-                f = random.randint(0,9)
+            password_code = input().lower()
+            a = random.choice(string.ascii_lowercase)
+            b = random.choice(string.ascii_lowercase)
+            c = random.choice(string.ascii_lowercase)
+            d = random.randint(0,9)
+            e = random.randint(0,9)
+            f = random.randint(0,9)
 
-                password = f'{a}{b}{c}{d}{e}{f}'
+            password = f'{a}{b}{c}{d}{e}{f}'
+            if password_code == 'gp': 
+                print('\n') 
                 print(f'Password {password} generated')
 
                 save_credential(create_credentials(a_name,u_name,e_address,password))
-                print('\n')
+                print('-'*20)
                 print(f'New {a_name} account credentials saved')
                 print('\n')
 
@@ -157,10 +159,12 @@ def main():
                 print('\n')
 
             else:
+                print('\n')
                 print('Please input the correct code')
+                print('\n')
 
         elif code == 'dc':
-            if len(display_credential()) > 0 :
+            if display_credential():
                 print('Here is a list of all you account credentials')
                 print('\n')
 
@@ -180,7 +184,8 @@ def main():
             print('Enter account name you are searching for')
             search_name = input().lower()
             if credential_exist(search_name):
-                search_credentials = find_credentials(search_name) 
+                search_credentials = find_credentials(search_name)
+                print('\n') 
                 print(f'{search_credentials.account_name}')
                 print('-'*20)
                 print(f'Username....{search_credentials.username}')
@@ -189,18 +194,27 @@ def main():
                 print('\n')
 
             else:
+                print('\n')
                 print('That account credentials does not exist')
+                print('\n')
+
+        elif code == 'dlc':
+            print('Enter account name of credentials to be deleted')
+            search_name = input().lower()
+            search_credentials = find_credentials(search_name)
+            del_credentials(search_credentials)
+
+            print('\n')
+            print(f'{search_credentials.account_name} credentials deleted.')
+            print('\n')
 
         elif code == 'ex':
             print('Bye.....')
             break
 
         else:
+            print('\n')
             print('Please use the codes provided. Thank you')
-
-        
-
-
 
 
 if __name__ == '__main__':
