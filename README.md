@@ -1,6 +1,6 @@
 [![codebeat badge](https://codebeat.co/badges/d2cef83c-fd48-4901-8936-a16c20d8ac33)](https://codebeat.co/projects/github-com-paulmburu08-lockpass-master)
 # LOCKPASS
-An application where users can save different account credentials like usernames and passwords
+An application where users can save different account credentials like usernames and passwords.
 
 # Authors
 {paulmburu08}https://github.com/paulmburu08
