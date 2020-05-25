@@ -48,6 +48,18 @@ class CredentialsTest(unittest.TestCase):
 
         self.assertEqual(len(Credentials.credentials_list),2)
 
+    def test_credentials_exist(self):
+        '''
+        test to check if we can return a Boolean  if we cannot find the contact.
+        '''
+
+        self.new_credentials.save_credentials()
+        test_credentials = Credentials('Instagram','mburupavl','paulmburu08@gmail.com','think4562')
+        test_credentials.save_credentials()
+
+        credential_exists = Credentials.credentials_exist('Instagram')
+        self.assertTrue(credential_exists)
+
     def test_delete_credentials(self):
         '''
         test_delete_credentials to test if we can remove and account credentials from our credentials list
